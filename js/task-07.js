@@ -1,3 +1,8 @@
 const fontSiszeValue = document.querySelector("#font-size-control");
+const textForChange = document.querySelector("#text");
 
-console.log(fontSiszeValue.value);
+fontSiszeValue.addEventListener("change", changeFontSize);
+
+function changeFontSize() {
+  textForChange.style.fontSize = `${fontSiszeValue.value}px`;
+}
