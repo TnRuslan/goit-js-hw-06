@@ -6,19 +6,10 @@ const destroyButton = document.querySelector("[data-destroy]");
 const input = document.querySelector("input");
 const boxes = document.querySelector("#boxes");
 
-console.log(createButton);
-console.log(destroyButton);
-console.log(input);
-
 createButton.addEventListener("click", createBox);
 destroyButton.addEventListener("click", destroyBox);
 input.addEventListener("change", onInputValue);
-
-function getRandomColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+input.addEventListener("focus", destroyBox);
 
 let inputValue = 0;
 
@@ -32,7 +23,7 @@ function createBox() {
   let width = 30;
   let height = 30;
   for (let i = 0; i < inputValue; i += 1) {
-    const box = `<div style='width: ${width}px; height: ${height}px; background-color: ${getRandomColor()}; margin-bottom: 20px'></div>`;
+    const box = `<div style='width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()}; margin-bottom: 20px'></div>`;
 
     allBoxes.push(box);
     width += 10;
