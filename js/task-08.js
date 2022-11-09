@@ -13,5 +13,7 @@ function onFormSubmit(event) {
     userName.email = formElements.email.value;
     userName.password = formElements.password.value;
   }
+
+  form.reset();
   console.log(userName);
 }
