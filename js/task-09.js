@@ -8,7 +8,8 @@ const bgcTextColor = document.querySelector(".color");
 btnChangeCoolor.addEventListener("click", changeBodyColor);
 
 function changeBodyColor() {
-  document.body.style.backgroundColor = `${getRandomHexColor()}`;
-  bgcTextColor.textContent = `${getRandomHexColor()}`;
-  console.log(getRandomHexColor());
+  const color = getRandomHexColor();
+  document.body.style.backgroundColor = `${color}`;
+  bgcTextColor.textContent = `${color}`;
+  console.log(color);
 }
